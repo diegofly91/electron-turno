@@ -1,0 +1,36 @@
+  $breakpoint-tablet: 768px;
+.Layout {
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-row-gap: 10px;
+    grid-template-rows: auto 1fr auto;
+    height: 100vh;
+    width: 100%;
+    background: url('/static/basa.jpg');
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-attachment: fixed;
+    background-position: center;
+    
+    .header {
+        grid-row: 1;
+        border-bottom: solid 1px #fdfdfd;
+    }
+
+    .main {
+        grid-row: 2;
+    }
+    
+    .footer {
+        grid-row: 3;
+        background: #edf2f8;
+        padding: 10px;
+    }
+
+    @media (max-width: $breakpoint-tablet) {
+        .Layout {
+            padding-left: 0px;
+            padding-right: 0px;        
+        }
+    }
+}

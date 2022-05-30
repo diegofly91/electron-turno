@@ -2,10 +2,25 @@ import { User } from '../interfaces'
 
 /** Dummy user data. */
 export const dataArray: User[] = [
-  { id: 101, name: 'Alice' },
-  { id: 102, name: 'Bob' },
-  { id: 103, name: 'Caroline' },
-  { id: 104, name: 'Dave' },
+  { id: 101, typeDocument: 1, document: 95950000, name: 'Diego', lastname: 'Arce' },
+  { id: 102, document: 95951000, name: 'Kylian', lastname: 'Embappé', typeDocument: 1,
+       turn: {
+         id: 12,
+         time: '10:00 am 25-05-2022',
+         professional: 'Carlos Torres',
+         consulting : 'A10',
+         payment: true
+       }
+   },
+  { id: 103, document: 95952000, name: 'mohamed', lastname: 'Salah', typeDocument: 1,
+        turn: {
+          id: 12,
+          time: '10:00 am 25-05-2022',
+          professional: 'Carlos Torres',
+          consulting : 'A10',
+          payment: false
+        } 
+  },
 ]
 
 /**
@@ -13,12 +28,12 @@ export const dataArray: User[] = [
  *
  * Throws an error if not found.
  */
-export async function findData(id: number | string) {
-  const selected = dataArray.find((data) => data.id === Number(id))
+export async function findData(document: number | string, typeDocument:number | string) {
+  const selected: User = dataArray.find((data) => (data.document === Number(document) && data.typeDocument === Number(typeDocument)))
 
-  if (!selected) {
-    throw new Error('Cannot find user')
-  }
+  // if (!selected) {
+  //   throw new Error('No Encontramos sus datos en el sistema')
+  // }
 
   return selected
 }

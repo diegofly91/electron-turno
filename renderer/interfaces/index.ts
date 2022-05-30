@@ -15,7 +15,29 @@ declare global {
   }
 }
 
+export type Button = {
+  id: number,
+  value: number
+}
+
+export type Document = {
+  id: number,
+  name: string,
+}
+
 export type User = {
-  id: number
-  name: string
+  id: number,
+  typeDocument: number,
+  document: number,
+  name: string,
+  lastname: string,
+  turn?: Turn
+}
+
+export type Turn = {
+  id: number,
+  time: string,
+  professional: string,
+  consulting : string,
+  payment: boolean
 }
